@@ -1,5 +1,5 @@
 
-Sid-Bird prj: PADOVA, CITY WITHOUT UNIVERSITY / UNIVERISTY WITHOUT CITY living in the university city after the COVID19 emergency (SPGI Department)
+# Sid-Bird prj: PADOVA, CITY WITHOUT UNIVERSITY / UNIVERISTY WITHOUT CITY living in the university city after the COVID19 emergency (SPGI Department)
 
 In a perspective of necessary distinction between "before" and "after" the Covid 19 which has changed the characteristics and methods of social relations as well as practices of use and consumption of public and private space, the research focuses on how they have changed / relationships and practices are changing in a “city-university ". 
 
@@ -13,7 +13,7 @@ In the "city-campus" or rather in the "city + campus" (a definition that is base
 1. the "field of action" of the university as it took shape in the period of maximum pandemic and more rigorous lock-down, through the necessary recourse to distance learning, trying to understand the expansion of the boundaries of the university and "University city" through digital connections (how far did the borders extend into space? Where were the students and teachers physically? How much space did the university embrace outside its city?).
 2. In a hypothesis of a "digitalized" and "virtualized" university, what will become of the university city in a scenario "without" students? How will the city change in terms of housing supply / demand? What will be determined in the field of movement flows to and from the city and within the city? What will happen in the urban places lived by students? And in the long run: how universities and cities will have to readjust to the new condition? What will be the new spaces in which one will expand and / or the other will retract and vice-versa? What are the spaces in which the interaction will be visible and productive of new ideas and solutions between the two institutions for the well-being of the inhabitants - temporary and less temporary - of the city?
 
-The real innovation of the project consists in the proposed methodology. 
+# The real innovation of the project consists in the proposed methodology. 
 
 The research group, which combines the political and urban planning approach in a historical dimension, will in fact allow the combined use of scenario processing techniques with the construction of maps on which the collected data can be "projected", even through structured questionnaires addressed to students, intertwining data-driven maps produced in GIS with “community maps”, an expression of ethnographic research and field research. For the scenarios we will use the participatory SWOT analysis (on the MOSAIC platform) also to summarize the strategies shared by the actors involved in the research path.
 
