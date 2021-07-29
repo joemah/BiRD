@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
 from plotly.subplots import make_subplots
 from matplotlib.lines import Line2D
 from termcolor import colored
@@ -47,7 +46,6 @@ def get_col_names():
     return cols_obj, cols_num
 
 
-# In[6]:
 
 
 def check_null_dublicates(data):
@@ -66,7 +64,6 @@ def check_null_dublicates(data):
         
 
 
-# In[7]:
 def clean_data_column(data, col, listA, listB):
     
     for i in range(len(listA)):
@@ -83,45 +80,6 @@ def fill_nan(data):
     return data
 
 
-# In[8]:
-
-
-def MakePlots(data, col,col2,barmode,opacity,rend, title):
-    
-    data = data.groupby(by=[col, col2]).size().reset_index(name="counts")
-    fig = px.bar(data_frame=data, x=col, y="counts", color=col2, barmode=barmode,opacity=opacity)
-    fig.update_layout(xaxis={'categoryorder':'category ascending'},
-                      height=600, width=1000, title=title)
-    fig.show(renderer=rend)
-    
-
-
-# In[9]:
-
-
-def plot_bar_polar(data, col, col2,height,width,barmode,rend,title):
-    
-    data = data.groupby(by=[col, col2]).size().reset_index(name="frequency")
-    fig = px.bar_polar(data, r="frequency", color=col, title=title,height=height, width=width,
-        theta=col2, template="plotly_dark", barmode=barmode,
-        color_discrete_sequence=px.colors.sequential.Viridis
-    )
-    fig.show(renderer=rend)
-
-
-# In[10]:
-
-
-def plot_dostributions(data, cols, title,nbins,opacity,bool, barmode='group'):
-    
-    layout1 = cf.Layout(width=1000, height=650,title=title)
-    data[cols].iplot(kind='hist', xTitle='Value',bins=nbins, theme = 'polar', layout=layout1,
-                     histnorm='percent',opacity=opacity,barmode=barmode,online=bool,
-                  yTitle='% count')
-    
-
-# In[11]:
-
 
 def get_numerical_data(data):
     
@@ -134,35 +92,35 @@ def get_numerical_data(data):
     return data
 
 
-# In[ ]:
 
-def use_bar(data, cols, opacity,rend,title, barmode='group'):
-
-    pd.options.plotting.backend = "plotly"
-    data = data.groupby(by=cols).size().reset_index(name="counts")
-    fig = data.plot.bar(x=cols, y='counts',barmode=barmode,opacity=opacity)
-    fig.update_layout(xaxis={'categoryorder':'category ascending'},
-                      height=600, width=1000, title=title)
+def replace_missing_value(data, cols):
     
-    fig.show(renderer=rend)
+    for col in cols:
+        
+        
+        if col == 'Gender':
+            data[col] = data[col].fillna('I prefer not to say')
+        
+        elif col == 'TypeOfStudent':
+            
+            data[col] = data[col].fillna('Other')
+            
+        elif col == 'DoB':
+            
+            data[col] = data[col].fillna(2020)
+        elif col == 'WhyRemainedPD':
+            
+            data[col] = data[col].fillna('Lockdown')
+        
+        elif col == 'AdviceOnlineLessons':
 
-
-
-# In[12]:
-
-
-def plot_heatmap(data):
-    
-    correlation = data.corr(method='pearson')
-    df_lt = correlation.where(np.tril(np.ones(correlation.shape)).astype(np.bool))
-    fig = px.imshow(df_lt, origin='upper', title='Correlation between features',
-                    width=1200,height=1100, aspect='equal')
-    #fig.update_layout(width=1200, height=1200, title='')
-    fig.show()
-
-
-# In[ ]:
-
-
-
+            data[col] = data[col].fillna('No advice')
+        
+        elif col == 'CountryB4Covid' or col == 'Nationality' or col == 'OnlineLessonsCountry' or col == 'BScDegreeCountry':
+            data[col] = data[col].fillna('Unknown')
+        
+        else:
+            data[col] = data[col].fillna('NotSpecified')
+        
+    return data
 
